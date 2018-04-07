@@ -14,9 +14,9 @@ def parse_args():
 
 def check_in_list(password, path_to_bad_passwords_file):
     try:
-        with open(path_to_bad_passwords_file, "r") as f:
-            for i in range(1000000):
-                if str(f.readline()).strip() == password:
+        with open(path_to_bad_passwords_file, "r") as f:            
+            for line in f:
+                if line.strip() == password:
                     print("BadPassword")
                     return 1
     except FileNotFoundError:
