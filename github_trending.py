@@ -22,7 +22,7 @@ def get(date):
 
 
 def get_issues(repos_name, login_name):
-    url = "https://api.github.com/repos/{}/{}/issues".format(login_name, repos_name)
+    url = "https://api.github.com/repos/{0}/{1}/issues".format(login_name, repos_name)
     print(url)
     #r = requests.get(url)
     #return print(r.json())
