@@ -34,8 +34,7 @@ def get_issues(users):
         "order": "desc",
         "token": "your-personal-access-github-token"
     }
-    for user in users:
-        login_name, repos_name = user[0], user[1]
+    for login_name, repos_name in users:
         url = "https://api.github.com/repos/{0}/{1}/issues".format(login_name, repos_name)
         r = requests.get(url, params=params_for_issues)
         issues = r.json()
